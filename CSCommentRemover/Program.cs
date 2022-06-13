@@ -14,16 +14,17 @@ namespace CSCommentRemover
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            //String returnHtmlText = null;
-            //if (Clipboard.ContainsText(TextDataFormat.Html))
-            //{
-            //    returnHtmlText = Clipboard.GetText(TextDataFormat.Html);
-            //    Clipboard.SetText(replacementHtmlText, TextDataFormat.Html);
-            //}
-            //return returnHtmlText;
             if (Clipboard.ContainsText())
             {
                 String text = Clipboard.GetText();
+                String[] lines = text.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
+                int index = 0;
+                foreach (String line in lines)
+                {
+                    line.Trim();
+                    Console.WriteLine(line.Trim() + index);
+                    index++;
+                }
                 Console.WriteLine(text);
             }
             else
