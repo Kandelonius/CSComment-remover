@@ -11,8 +11,8 @@ namespace CSCommentRemover
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             //String returnHtmlText = null;
             //if (Clipboard.ContainsText(TextDataFormat.Html))
@@ -21,8 +21,16 @@ namespace CSCommentRemover
             //    Clipboard.SetText(replacementHtmlText, TextDataFormat.Html);
             //}
             //return returnHtmlText;
-            String text = Clipboard.GetText();
-            Console.WriteLine(text);
+            if (Clipboard.ContainsText())
+            {
+                String text = Clipboard.GetText();
+                Console.WriteLine(text);
+            }
+            else
+            {
+                Console.WriteLine("No text");
+            }
+                
         }
     }
 }
