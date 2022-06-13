@@ -21,9 +21,17 @@ namespace CSCommentRemover
                 int index = 0;
                 foreach (String line in lines)
                 {
-                    line.Trim();
-                    Console.WriteLine(line.Trim() + index);
-                    index++;
+                    String newLine = line.Trim();
+                    char charOne = newLine[0];
+                    char charTwo = newLine[1];
+                    if (!(charOne == '/') && !(charTwo == '/'))
+                    {
+                        Console.WriteLine("one is " + charOne + " and two is " + charTwo);
+                        //Console.WriteLine(line.Trim() + index);
+                        //index++;
+                    }
+                    //Console.WriteLine(line.Trim() + index);
+                    
                 }
                 Console.WriteLine(text);
             }
