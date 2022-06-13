@@ -8,15 +8,22 @@ namespace CSCommentRemover
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            //String returnHtmlText = null;
+            //if (Clipboard.ContainsText(TextDataFormat.Html))
+            //{
+            //    returnHtmlText = Clipboard.GetText(TextDataFormat.Html);
+            //    Clipboard.SetText(replacementHtmlText, TextDataFormat.Html);
+            //}
+            //return returnHtmlText;
+            String text = Clipboard.GetText();
+            Console.WriteLine(text);
         }
     }
 }
+
