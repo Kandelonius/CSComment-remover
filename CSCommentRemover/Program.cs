@@ -18,6 +18,7 @@ namespace CSCommentRemover
             {
                 String text = Clipboard.GetText(); // pulls the text from the clipboard to remove single line comments from
                 String[] lines = text.Split(new String[] { Environment.NewLine }, StringSplitOptions.None); // splits the lines of the text so we can look line by line
+                String[] newLines = new string[];
                 int index = 0;
                 foreach (String line in lines)
                 {
@@ -29,6 +30,7 @@ namespace CSCommentRemover
                         if (!(charOne == '/') && !(charTwo == '/'))
                         {
                             Console.WriteLine("one is " + charOne + " and two is " + charTwo);
+                            newLines.Append(newLine)
                             //Console.WriteLine(line.Trim() + index);
                             //index++;
                         }
