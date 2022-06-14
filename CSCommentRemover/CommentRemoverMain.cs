@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CSCommentRemover
 {
-    internal static class Program
+    internal static class CommentRemoverMain
     {
         [STAThread]
         static void Main()
@@ -19,7 +19,7 @@ namespace CSCommentRemover
                 String text = Clipboard.GetText(); // pulls the text from the clipboard to remove single line comments from
                 String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text);
                 Clipboard.SetText(newLines);
-
+                // logic for pasting contents will go here
                 Console.WriteLine("original test is \n" + text);
                 Console.WriteLine("newLines is \n" + newLines);
             }
@@ -27,8 +27,6 @@ namespace CSCommentRemover
             {
                 Console.WriteLine("No text");
             }
-            
-
         }
     }
 }
