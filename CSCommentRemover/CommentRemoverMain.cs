@@ -27,6 +27,7 @@ namespace CSCommentRemover
             {
                 Console.WriteLine("No text");
             }
+            Environment.Exit(0);
         }
     }
 }
