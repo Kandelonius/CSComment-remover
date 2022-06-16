@@ -10,10 +10,9 @@ namespace CSCommentRemover
     {
         public static string RemoveComments(string input)
         {
-            String[] lines = input.Split(new String[] { Environment.NewLine }, StringSplitOptions.None); // splits the lines of the text so we can look line by line
+            // splits the lines of the text so we can look line by line
+            String[] lines = input.Split(new String[] { Environment.NewLine }, StringSplitOptions.None); 
             String newLines = "";
-            Console.WriteLine("lines is " + lines.Length);
-            //int index = 0;
             foreach (String line in lines)
             {
                 String newLine = line.TrimStart();
@@ -33,7 +32,8 @@ namespace CSCommentRemover
                     newLines += Environment.NewLine;
                 }
             }
-            newLines = newLines.Substring(0, newLines.Length - 2); // removes the last empty line
+            // removes the last empty line
+            newLines = newLines.Substring(0, newLines.Length - 2); 
             return newLines;
         }
     }

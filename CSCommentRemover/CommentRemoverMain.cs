@@ -16,12 +16,12 @@ namespace CSCommentRemover
             //Application.Run(new Form1());
             if (Clipboard.ContainsText())
             {
-                String text = Clipboard.GetText(); // pulls the text from the clipboard to remove single line comments from
+                // pulls the text from the clipboard from which we'll remove single line comments
+                String text = Clipboard.GetText();
+                // calls the remove comments method passing the captured text and assigns the result to newLines variable
                 String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text);
+                // changes the text on the clipboard to the uncommented text
                 Clipboard.SetText(newLines);
-                // logic for pasting contents will go here
-                //Console.WriteLine("original test is \n" + text);
-                //Console.WriteLine("newLines is \n" + newLines);
             }
             else
             {
