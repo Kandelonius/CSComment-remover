@@ -20,8 +20,8 @@ namespace CSCommentRemover
                 String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text);
                 Clipboard.SetText(newLines);
                 // logic for pasting contents will go here
-                Console.WriteLine("original test is \n" + text);
-                Console.WriteLine("newLines is \n" + newLines);
+                //Console.WriteLine("original test is \n" + text);
+                //Console.WriteLine("newLines is \n" + newLines);
             }
             else
             {
