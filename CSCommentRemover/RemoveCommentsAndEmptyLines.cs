@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSCommentRemover
 {
-    static class RemoveCommentsAndEmptyLines
+    public static class RemoveCommentsAndEmptyLines
     {
         public static string RemoveComments(string input)
         {

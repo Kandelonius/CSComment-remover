@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace TestingCommentRemover
 {
+    [STAThread]
     [TestClass]
     public class UnitTest1
     {
@@ -15,10 +16,11 @@ namespace TestingCommentRemover
         [TestMethod]
         public void CommentedLinesShowOnClipboard()
         {
+            Clipboard.Clear();
             string shortCommentedLine = "//|";
             Clipboard.SetText(shortCommentedLine);
-
-            Assert.IsTrue(Clipboard.GetText() == "//|");
+            //string clipboardContents = Clipboard.GetData();
+            Assert.IsTrue(Clipboard.ContainsText());
         }
     }
 }

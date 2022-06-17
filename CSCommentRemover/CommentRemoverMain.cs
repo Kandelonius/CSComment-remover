@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CSCommentRemover
 {
-    internal static class CommentRemoverMain
+    public static class CommentRemoverMain
     {
         [STAThread]
         static void Main()
