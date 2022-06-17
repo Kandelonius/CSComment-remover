@@ -3,7 +3,7 @@ using CSCommentRemover;
 namespace TestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class TestingCommentRemover
     {
         [TestMethod]
         public void CommentRemoverRemovesComments()
