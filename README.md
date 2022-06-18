@@ -4,4 +4,4 @@
 
 ##### Currently following the steps in the following pages for guidance on running the program on a users machine. [create shortcut](https://www.digitalcitizen.life/how-create-shortcuts/) --> [create custom hotkeys to run the program](https://www.digitalcitizen.life/start-windows-apps-keyboard-shortcut/)
 
-###### May need [this](https://stackoverflow.com/questions/50155078/how-to-unit-test-this-method-uses-clipboard-and-file-system) if I need to test clipboard dependent code.
+###### May need [this](https://stackoverflow.com/questions/50155078/how-to-unit-test-this-method-uses-clipboard-and-file-system) if I need to test clipboard dependent code. \n TODO: create error file
