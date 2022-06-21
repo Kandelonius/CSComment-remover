@@ -15,22 +15,31 @@ namespace CSCommentRemover
             String newLines = "";
             foreach (String line in lines)
             {
-                String newLine = line.TrimStart();
-                if (newLine.Length >= 2)
+                String newLine = "";
+                try
                 {
-                    char charOne = newLine[0];
-                    char charTwo = newLine[1];
-                    if (!(charOne == '/') && !(charTwo == '/'))
+                    newLine = line.TrimStart();
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw new ArgumentException("Arguments were invalid within RemoveComments method.");
+                }
+                if (newLine.Length >= 2)
+                    {
+                        char charOne = newLine[0];
+                        char charTwo = newLine[1];
+                        if (!(charOne == '/') && !(charTwo == '/'))
+                        {
+                            newLines += newLine;
+                            newLines += Environment.NewLine;
+                        }
+                    }
+                    else if (newLine.Length == 1)
                     {
                         newLines += newLine;
                         newLines += Environment.NewLine;
                     }
-                }
-                else if (newLine.Length == 1)
-                {
-                    newLines += newLine;
-                    newLines += Environment.NewLine;
-                }
             }
             // removes the last empty line
             newLines = newLines.Substring(0, newLines.Length - 2); 

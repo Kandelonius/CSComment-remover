@@ -14,6 +14,7 @@ namespace CSCommentRemover
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
+
             if (Clipboard.ContainsText())
             {
                 // pulls the text from the clipboard from which we'll remove single line comments
