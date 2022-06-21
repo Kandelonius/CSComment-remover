@@ -25,6 +25,11 @@ namespace CSCommentRemover
                     Console.WriteLine(ex.ToString());
                     throw new ArgumentException("Arguments were invalid within RemoveComments method.");
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    throw;
+                }
                 if (newLine.Length >= 2)
                     {
                         char charOne = newLine[0];
