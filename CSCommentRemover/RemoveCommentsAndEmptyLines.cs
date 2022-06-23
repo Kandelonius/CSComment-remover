@@ -31,20 +31,20 @@ namespace CSCommentRemover
                     throw;
                 }
                 if (newLine.Length >= 2)
-                    {
-                        char charOne = newLine[0];
-                        char charTwo = newLine[1];
-                        if (!(charOne == '/') && !(charTwo == '/'))
-                        {
-                            newLines += newLine;
-                            newLines += Environment.NewLine;
-                        }
-                    }
-                    else if (newLine.Length == 1)
+                {
+                    char charOne = newLine[0];
+                    char charTwo = newLine[1];
+                    if (!(charOne == '/') && !(charTwo == '/'))
                     {
                         newLines += newLine;
                         newLines += Environment.NewLine;
                     }
+                }
+                else if (newLine.Length == 1)
+                {
+                    newLines += newLine;
+                    newLines += Environment.NewLine;
+                }
             }
             // removes the last empty line
             newLines = newLines.Substring(0, newLines.Length - 2); 

@@ -16,5 +16,10 @@ namespace CSCommentRemover
         {
             InitializeComponent();
         }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            this.progressBar1.Increment(1);
+        }
     }
 }
