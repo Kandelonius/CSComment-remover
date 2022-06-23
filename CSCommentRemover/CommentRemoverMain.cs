@@ -11,9 +11,8 @@ namespace CSCommentRemover
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
             if (Clipboard.ContainsText())
             {
@@ -28,6 +27,7 @@ namespace CSCommentRemover
             {
                 Console.WriteLine("No text");
             }
+            Application.Run(new Form1());
             Environment.Exit(0);
         }
     }
