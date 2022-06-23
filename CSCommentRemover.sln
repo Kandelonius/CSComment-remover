@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCommentRemover", "CSCommentRemover\CSCommentRemover.csproj", "{1B4B032B-62B0-4D5A-968F-C034B32271CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRemoverTests", "TestProject1\CommentRemoverTests.csproj", "{CD4E31F8-A95A-4962-AF6E-8FE653315D22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comment-remover-tests", "Comment-remover-tests\Comment-remover-tests.csproj", "{752ADFFC-9286-442C-9FA4-1061CD3DC671}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{1B4B032B-62B0-4D5A-968F-C034B32271CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B4B032B-62B0-4D5A-968F-C034B32271CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B4B032B-62B0-4D5A-968F-C034B32271CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD4E31F8-A95A-4962-AF6E-8FE653315D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD4E31F8-A95A-4962-AF6E-8FE653315D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD4E31F8-A95A-4962-AF6E-8FE653315D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD4E31F8-A95A-4962-AF6E-8FE653315D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{752ADFFC-9286-442C-9FA4-1061CD3DC671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752ADFFC-9286-442C-9FA4-1061CD3DC671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752ADFFC-9286-442C-9FA4-1061CD3DC671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752ADFFC-9286-442C-9FA4-1061CD3DC671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
