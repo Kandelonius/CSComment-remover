@@ -32,9 +32,11 @@ namespace CSCommentRemover
                 }
                 if (newLine.Length >= 2)
                 {
-                    char charOne = newLine[0];
-                    char charTwo = newLine[1];
-                    if (!(charOne == '/') && !(charTwo == '/'))
+                    //char charOne = newLine[0];
+                    //char charTwo = newLine[1];
+                    string firstTwo = newLine.Substring(0, 2);
+                    if (firstTwo != "//")
+                        //(charOne == '/') && !(charTwo == '/'))
                     {
                         newLines += newLine;
                         newLines += Environment.NewLine;
