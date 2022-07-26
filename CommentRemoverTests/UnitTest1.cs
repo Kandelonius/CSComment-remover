@@ -1,6 +1,6 @@
 using CSCommentRemover;
 
-namespace Comment_remover_tests
+namespace CommentRemoverTests
 {
     [TestClass]
     public class UnitTest1
