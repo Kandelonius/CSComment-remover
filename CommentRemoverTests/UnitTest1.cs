@@ -3,15 +3,40 @@ using CSCommentRemover;
 namespace CommentRemoverTests
 {
     [TestClass]
+    [TestCategory("Comment Removal")]
     public class UnitTest1
     {
+        string multiLineTestWithComments;
+        string multiLineTestWithoutComments;
+        string stringAfterCommentRemovedMethod;
+        [TestInitialize]
+        public void RunsBeforeEveryTest ()
+        {
+            multiLineTestWithComments = $"line one{Environment.NewLine}//line two{Environment.NewLine}line three";
+            multiLineTestWithoutComments = $"line one{Environment.NewLine}line two{Environment.NewLine}line three";
+        }
         [TestMethod]
+        [TestCategory("Positive")]
         public void CommentRemoverRemovesComments()
         {
-            string multiLineTestWithComments = $"line one{Environment.NewLine}//line two{Environment.NewLine}line three";
-            string multiLineTestWithoutComments = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithComments);
-            Console.WriteLine(multiLineTestWithoutComments);
-            Assert.IsTrue(multiLineTestWithoutComments == $"line one{Environment.NewLine}line three");
+            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithComments);
+            Assert.IsTrue(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
+        }
+
+        [TestMethod]
+        [TestCategory("Positive")]
+        [ExpectedException (typeof (AssertFailedException))]
+        public void LeadingWhitespaceIsRemoved()
+        {
+            Assert.Fail("empty test for now");
+        }
+
+        [TestMethod]
+        [TestCategory("Negative")]
+        public void IfThereAreNoCommentsLinesAreNotRemoved()
+        {
+            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithoutComments);
+            Assert.IsFalse(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
         }
     }
 }
