@@ -28,7 +28,9 @@ namespace CommentRemoverTests
         [ExpectedException (typeof (AssertFailedException))]
         public void LeadingWhitespaceIsRemoved()
         {
-            Assert.Fail("empty test for now");
+            string lineWithLeadingWhiteSpace = RemoveCommentsAndEmptyLines.RemoveWhiteSpace("  <-- two single spaces?");
+
+            Assert.AreEqual("  <-- two single spaces?", lineWithLeadingWhiteSpace);
         }
 
         [TestMethod]

@@ -15,21 +15,7 @@ namespace CSCommentRemover
             String newLines = "";
             foreach (String line in lines)
             {
-                String newLine = "";
-                try
-                {
-                    newLine = line.TrimStart();
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                    throw new ArgumentException("Arguments were invalid within RemoveComments method.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                    throw;
-                }
+                String newLine = RemoveWhiteSpace(line);
                 if (newLine.Length >= 2)
                 {
                     string firstTwo = newLine.Substring(0, 2);
@@ -48,6 +34,25 @@ namespace CSCommentRemover
             // removes the last empty line
             newLines = newLines.Substring(0, newLines.Length - 2); 
             return newLines;
+        }
+
+        public static string RemoveWhiteSpace(string line)
+        {
+            try
+            {
+                line = line.TrimStart();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw new ArgumentException("Arguments were invalid within RemoveComments method.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw;
+            }
+            return line;
         }
     }
 }
