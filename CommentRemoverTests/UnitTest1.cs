@@ -25,7 +25,6 @@ namespace CommentRemoverTests
 
         [TestMethod]
         [TestCategory("Positive")]
-        //[ExpectedException (typeof (AssertFailedException))]
         public void LeadingWhitespaceIsRemoved()
         {
             string lineWithLeadingWhiteSpace = RemoveCommentsAndEmptyLines.RemoveWhiteSpace("  <-- two single spaces?");
