@@ -24,9 +24,9 @@ namespace CSCommentRemover
             }
             else
             {
-                Console.WriteLine("No text");
+                Application.Run(new Form1());
+                //Console.WriteLine("No text");
             }
-            //Application.Run(new Form1());
             Environment.Exit(0);
         }
     }

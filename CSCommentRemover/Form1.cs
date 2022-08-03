@@ -19,7 +19,11 @@ namespace CSCommentRemover
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
-            this.progressBar1.Increment(1);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
