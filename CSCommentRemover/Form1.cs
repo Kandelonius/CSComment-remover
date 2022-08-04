@@ -12,18 +12,30 @@ namespace CSCommentRemover
 {
     public partial class Form1 : Form
     {
+        private string outputText;
+        private TextBox txtb;
         public Form1(string displayText)
         {
             InitializeComponent();
+            OutputText = displayText;
+            CreateATextBox();
         }
 
-        //private void progressBar1_Click(object sender, EventArgs e)
-        //{
-        //}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public string OutputText
         {
+            get { return outputText; }
+            set { outputText = value; }
+        }
 
+        private void CreateATextBox()  
+        {    
+            txtb = new TextBox();
+            txtb.Height = 50;    
+            txtb.Width = 200;
+            txtb.ForeColor = Color.White;
+            txtb.Text = $"{outputText}";
+            txtb.ReadOnly = true;
+            
         }
     }
 }
