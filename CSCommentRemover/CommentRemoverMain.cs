@@ -21,10 +21,11 @@ namespace CSCommentRemover
                 String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text);
                 // changes the text on the clipboard to the uncommented text
                 Clipboard.SetText(newLines);
+                Application.Run(new Form1("comments have been removed"));
             }
             else
             {
-                Application.Run(new Form1());
+                Application.Run(new Form1("no text found on clipboard"));
                 //Console.WriteLine("No text");
             }
             Environment.Exit(0);
