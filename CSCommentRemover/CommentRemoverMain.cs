@@ -11,8 +11,6 @@ namespace CSCommentRemover
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
             if (Clipboard.ContainsText())
             {
                 // pulls the text from the clipboard from which we'll remove single line comments
@@ -25,7 +23,6 @@ namespace CSCommentRemover
             else
             {
                 Application.Run(new Form1());
-                //Console.WriteLine("No text");
             }
             Environment.Exit(0);
         }

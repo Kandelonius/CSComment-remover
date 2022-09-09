@@ -50,5 +50,22 @@ namespace CommentRemoverTests
             stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithoutComments);
             Assert.IsFalse(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
         }
+        [TestMethod]
+        [TestCategory("Positive")]
+        public void ALineWithSlashesWillReturnFalseInCheck()
+        {
+            string lineWithSlashes = "// I'm a comment";
+            Assert.AreEqual(false, RemoveCommentsAndEmptyLines.CheckIfLineShouldBeRemoved(lineWithSlashes));
+        }
+        [TestMethod]
+        [TestCategory("Positive")]
+        public void AddLineMethodAddsTheLine()
+        {
+            string lineOne = $"I'm line one{Environment.NewLine}";
+            string lineTwo = "I'm line two";
+            string combinedLines = $"I'm line one{Environment.NewLine}I'm line two{Environment.NewLine}";
+            RemoveCommentsAndEmptyLines.AddLine(lineTwo, ref lineOne);
+            Assert.AreEqual(combinedLines, lineOne);
+        }
     }
 }
