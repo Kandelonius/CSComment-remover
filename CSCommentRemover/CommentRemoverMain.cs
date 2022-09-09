@@ -11,6 +11,7 @@ namespace CSCommentRemover
         [STAThread]
         static void Main()
         {
+            // on virtual branch
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             if (Clipboard.ContainsText())
