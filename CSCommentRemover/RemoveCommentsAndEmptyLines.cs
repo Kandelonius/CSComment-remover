@@ -66,7 +66,7 @@ namespace CSCommentRemover
 
 namespace CSCommentRemover
 {
-    public static class RemoveCommentsAndEmptyLines
+    public class RemoveCommentsAndEmptyLines
     {
         public static string RemoveComments(string input, string commentChar)
         {
@@ -90,8 +90,7 @@ namespace CSCommentRemover
                 }
                 else if (newLine.Length == 1)
                 {
-                    newLines += newLine;
-                    newLines += Environment.NewLine;
+                    AddLine(newLine, ref newLines);
                 }
             }
             // removes the last empty line
@@ -116,6 +115,18 @@ namespace CSCommentRemover
                 throw;
             }
             return line;
+        }
+
+        public static Boolean CheckIfLineShouldBeRemoved(string line)
+        {
+            string firstTwo = line.Substring(0, 2);
+            return firstTwo != "//";
+        }
+
+        public static void AddLine(string line, ref string newLines)
+        {
+            newLines += line;
+            newLines += Environment.NewLine;
         }
     }
 }
