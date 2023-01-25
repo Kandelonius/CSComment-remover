@@ -9,17 +9,19 @@ namespace CommentRemoverTests
         string multiLineTestWithComments;
         string multiLineTestWithoutComments;
         string stringAfterCommentRemovedMethod;
+        string multiLineTestWithOctothorpComments;
         [TestInitialize]
         public void RunsBeforeEveryTest ()
         {
             multiLineTestWithComments = $"line one{Environment.NewLine}//line two{Environment.NewLine}line three";
             multiLineTestWithoutComments = $"line one{Environment.NewLine}line two{Environment.NewLine}line three";
+            multiLineTestWithOctothorpComments = $"line one{Environment.NewLine}#line two{Environment.NewLine}line three";
         }
         [TestMethod]
         [TestCategory("Positive")]
         public void CommentRemoverRemovesComments()
         {
-            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithComments);
+            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithComments, "//");
             Assert.IsTrue(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
         }
 
@@ -47,8 +49,16 @@ namespace CommentRemoverTests
         [TestCategory("Negative")]
         public void IfThereAreNoCommentsLinesAreNotRemoved()
         {
-            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithoutComments);
+            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithoutComments, "//");
             Assert.IsFalse(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
+        }
+
+        [TestMethod]
+        [TestCategory("Positive")]
+        public void CommentRemoverRemovesOctothorpComments()
+        {
+            stringAfterCommentRemovedMethod = RemoveCommentsAndEmptyLines.RemoveComments(multiLineTestWithOctothorpComments, "#");
+            Assert.IsTrue(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
         }
     }
 }

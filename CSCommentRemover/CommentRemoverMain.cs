@@ -18,7 +18,7 @@ namespace CSCommentRemover
                 // pulls the text from the clipboard from which we'll remove single line comments
                 String text = Clipboard.GetText();
                 // calls the remove comments method passing the captured text and assigns the result to newLines variable
-                String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text);
+                String newLines = RemoveCommentsAndEmptyLines.RemoveComments(text, "//");
                 // changes the text on the clipboard to the uncommented text
                 Clipboard.SetText(newLines);
             }
