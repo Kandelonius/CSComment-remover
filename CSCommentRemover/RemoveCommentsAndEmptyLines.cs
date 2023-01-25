@@ -2,33 +2,31 @@
 /*
 namespace CSCommentRemover
 {
-    public static class RemoveCommentsAndEmptyLines
+    public class RemoveCommentsAndEmptyLines
     {
         public static string RemoveComments(string input)
         {
             // splits the lines of the text so we can look line by line
-            String[] lines = input.Split(new String[] { Environment.NewLine }, StringSplitOptions.None); 
+            String[] lines = input.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
             String newLines = "";
             foreach (String line in lines)
             {
                 String newLine = RemoveWhiteSpace(line);
                 if (newLine.Length >= 2)
                 {
-                    string firstTwo = newLine.Substring(0, 2);
-                    if (firstTwo != "//")
+                    bool isComment = CheckIfLineShouldBeRemoved(newLine);
+                    if (isComment)
                     {
-                        newLines += newLine;
-                        newLines += Environment.NewLine;
+                        AddLine(newLine, ref newLines);
                     }
                 }
                 else if (newLine.Length == 1)
                 {
-                    newLines += newLine;
-                    newLines += Environment.NewLine;
+                    AddLine(newLine, ref newLines);
                 }
             }
             // removes the last empty line
-            newLines = newLines.Substring(0, newLines.Length - 2); 
+            newLines = newLines.Substring(0, newLines.Length - 2);
             return newLines;
         }
 
@@ -49,6 +47,18 @@ namespace CSCommentRemover
                 throw;
             }
             return line;
+        }
+
+        public static Boolean CheckIfLineShouldBeRemoved(string line)
+        {
+            string firstTwo = line.Substring(0, 2);
+            return firstTwo != "//";
+        }
+
+        public static void AddLine(string line, ref string newLines)
+        {
+            newLines += line;
+            newLines += Environment.NewLine;
         }
     }
 }
