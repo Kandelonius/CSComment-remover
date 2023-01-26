@@ -61,13 +61,13 @@ namespace CommentRemoverTests
             Assert.IsTrue(stringAfterCommentRemovedMethod == $"line one{Environment.NewLine}line three");
         }
 
-        /*
         [TestMethod]
         [TestCategory("Positive")]
         public void ALineWithSlashesWillReturnFalseInCheck()
         {
+            string commentChar = "//";
             string lineWithSlashes = "// I'm a comment";
-            Assert.AreEqual(false, RemoveCommentsAndEmptyLines.CheckIfLineShouldBeRemoved(lineWithSlashes));
+            Assert.AreEqual(true, RemoveCommentsAndEmptyLines.CheckIfLineShouldBeRemoved(lineWithSlashes, commentChar));
         }
 
         [TestMethod]
@@ -80,6 +80,5 @@ namespace CommentRemoverTests
             RemoveCommentsAndEmptyLines.AddLine(lineTwo, ref lineOne);
             Assert.AreEqual(combinedLines, lineOne);
         }
-        */
     }
 }

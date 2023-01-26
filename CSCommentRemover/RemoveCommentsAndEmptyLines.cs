@@ -78,14 +78,10 @@ namespace CSCommentRemover
                 String newLine = RemoveWhiteSpace(line);
                 if (newLine.Length >= commentChar.Length)
                 {
-                    string firstChars = newLine.Substring(0, commentChar.Length);
-                    if (firstChars != commentChar)
+                    bool isComment = CheckIfLineShouldBeRemoved(newLine, commentChar);
+                    if (!isComment)
                     {
-                        if (!string.IsNullOrEmpty(newLine))
-                        {
-                            newLines += newLine;
-                            newLines += Environment.NewLine;
-                        }
+                        AddLine(newLine, ref newLines);
                     }
                 }
                 else if (newLine.Length == 1)
@@ -117,10 +113,10 @@ namespace CSCommentRemover
             return line;
         }
 
-        public static Boolean CheckIfLineShouldBeRemoved(string line)
+        public static Boolean CheckIfLineShouldBeRemoved(string line, string commentChar)
         {
-            string firstTwo = line.Substring(0, 2);
-            return firstTwo != "//";
+            string lineStart = line.Substring(0, commentChar.Length);
+            return lineStart == commentChar;
         }
 
         public static void AddLine(string line, ref string newLines)
