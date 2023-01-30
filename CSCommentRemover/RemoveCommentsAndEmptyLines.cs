@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace CSCommentRemover
 {
@@ -28,6 +29,15 @@ namespace CSCommentRemover
             // removes the last empty line
             newLines = newLines.Substring(0, newLines.Length - 2);
             return newLines;
+
+            /* 
+             * working on regex below which might be able to remove lines as expected
+             * currently it will remove the text, but keeps the line as well as all of the leading
+             * whitespace.
+             */
+
+            //string pattern = $@"^\s*{commentChar}.*";
+            //return Regex.Replace(input, pattern, "", RegexOptions.Multiline);
         }
 
         public static string RemoveWhiteSpace(string line)
