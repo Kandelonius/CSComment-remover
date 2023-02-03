@@ -41,7 +41,7 @@ namespace CSCommentRemover
              * the comment character(s) then that line should be removed. After that return
              * that line replaced with an empty string and extend this to all lines which match
              * this pattern.
-            */ 
+             */ 
             //string pattern = $@"^\s*{commentChar}.*";
             //return Regex.Replace(input, pattern, "", RegexOptions.Multiline);
         }
